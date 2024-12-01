@@ -13,19 +13,19 @@ import java.util.Date;
 public class BestellungTest {
 
     @Test
-    public void testBestellungConstructor() {
+    public void testBestellungConstructor() throws Exception {
         Kunde kunde = new Kunde("Max Mustermann", 1);
         Kellner kellner = new Kellner("Anna Schmidt", 101);
         Bestellung bestellung = new Bestellung(1, new Date(), kunde, kellner);
 
-        assertEquals(1, bestellung.bestellnummer());
-        assertNotNull(bestellung.bestelldatum());
+        assertEquals(1, bestellung.getBestellnummer());
+        assertNotNull(bestellung.getBestelldatum());
         assertEquals(kunde, bestellung.getKunde());
         assertEquals(kellner, bestellung.getKellner());
     }
 
     @Test
-    public void testGerichtHinzufuegen() {
+    public void testGerichtHinzufuegen() throws Exception {
         Gericht gericht = new Gericht("Pizza Margherita", "Pizza mit Tomaten und Käse", 8.50);
         Kunde kunde = new Kunde("Max Mustermann", 1);
         Kellner kellner = new Kellner("Anna Schmidt", 101);
@@ -36,7 +36,7 @@ public class BestellungTest {
     }
 
     @Test
-    public void testGesamtSumme() {
+    public void testGesamtSumme() throws Exception {
         Gericht gericht1 = new Gericht("Pizza Margherita", "Pizza mit Tomaten und Käse", 8.50);
         Gericht gericht2 = new Gericht("Spaghetti Bolognese", "Pasta mit Fleischsauce", 12.00);
         Kunde kunde = new Kunde("Max Mustermann", 1);

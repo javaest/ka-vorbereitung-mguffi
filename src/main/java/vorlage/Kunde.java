@@ -2,9 +2,9 @@ package vorlage;
 
 public class Kunde extends Person{
     private int kundennummer;
-	public Kunde(String name, int kundennummer) {
-		super();
-		this.name = name;
+	public Kunde(String name, int kundennummer) throws Exception {
+		super(name);
+		
 		this.kundennummer = kundennummer;
 	}
 
